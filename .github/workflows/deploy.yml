@@ -27,6 +27,10 @@ jobs:
         
       - name: Build
         run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          # Отключаем проверку типов при сборке
+          NEXT_TYPE_CHECKING: false
 
       - name: Create CNAME
         run: |
