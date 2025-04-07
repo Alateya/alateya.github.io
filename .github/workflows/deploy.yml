@@ -32,6 +32,9 @@ jobs:
           # Отключаем проверку типов при сборке
           NEXT_TYPE_CHECKING: false
 
+      - name: Ensure out directory exists
+        run: mkdir -p out
+      
       - name: Create CNAME
         run: |
           touch out/.nojekyll
