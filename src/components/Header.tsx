@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const BlurryText = ({ text }) => {
-  const [letterHovered, setLetterHovered] = useState(null);
+const BlurryText = ({ text }: { text: string }) => {
+  const [letterHovered, setLetterHovered] = useState<number | null>(null);
   
   return (
     <motion.span className="relative inline-block">

@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 
 // Заменяем TypeAnimation на анимированный текст с подсветкой
-const AnimatedDescription = ({ text }) => {
+const AnimatedDescription = ({ text }: { text: string }) => {
   // Ключевые слова для выделения
   const keywordsToHighlight = [
     'Data Science', 
@@ -96,7 +96,7 @@ const Hero = () => {
   useEffect(() => {
     setIsMounted(true);
     
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
         y: e.clientY

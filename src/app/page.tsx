@@ -13,13 +13,13 @@ import ScrollToTop from '@/components/ScrollToTop';
 export default function Home() {
   useEffect(() => {
     // Добавляем плавную прокрутку для всех внутренних ссылок
-    const handleSmoothScroll = (e) => {
-      const target = e.target;
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
       
       // Проверяем, является ли элемент внутренней ссылкой
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+      if (target.tagName === 'A' && (target as HTMLAnchorElement).getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
-        const id = target.getAttribute('href').slice(1);
+        const id = (target as HTMLAnchorElement).getAttribute('href')!.slice(1);
         const element = document.getElementById(id);
         
         if (element) {
@@ -32,11 +32,11 @@ export default function Home() {
     };
     
     // Добавляем обработчик событий ко всему документу
-    document.addEventListener('click', handleSmoothScroll);
+    document.addEventListener('click', handleSmoothScroll as EventListener);
     
     // Убираем обработчик при размонтировании компонента
     return () => {
-      document.removeEventListener('click', handleSmoothScroll);
+      document.removeEventListener('click', handleSmoothScroll as EventListener);
     };
   }, []);
 
