@@ -161,7 +161,7 @@ const Footer = () => {
                 </div>
                 <div className="flex space-x-5">
                   <motion.a 
-                    href="https://t.me/username" 
+                    href="https://t.me/alateya_96" 
                     className="text-white/60 hover:text-secondary transition-all duration-300 p-2 border border-white/10 rounded-lg hover:border-secondary/40"
                     aria-label="Telegram"
                     variants={iconVariants}
