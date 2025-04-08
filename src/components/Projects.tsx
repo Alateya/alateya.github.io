@@ -50,7 +50,7 @@ const projectsData = [
     title: 'Прогнозирование банковских транзакций',
     description: 'Разработка системы прогнозирования еженедельных сумм переводов со счетов юридических лиц клиентов банка другим юридическим лицам с высокой точностью (RMSLE < 1,47).',
     technologies: ['Python', 'pandas', 'numpy', 'scikit-learn', 'LightGBM', 'CatBoost', 'временные ряды'],
-    status: 'В разработке',
+    status: 'Завершен',
     details: [
       'Анализ и предобработка массивного набора данных (>200 млн транзакций)',
       'Разработка системы генерации признаков на основе банковских транзакций',
@@ -58,16 +58,10 @@ const projectsData = [
       'Оптимизация алгоритмов для работы с большими объемами данных',
       'Создание метрик для валидации точности прогнозирования'
     ],
-    currentStatus: [
-      'Завершен этап предварительной обработки и анализа данных',
-      'Реализована базовая модель прогнозирования',
-      'В процессе оптимизации гиперпараметров моделей и разработки дополнительных признаков',
-      'Разрабатываются подходы к ансамблированию для повышения точности прогноза'
-    ],
-    plannedResults: [
-      'Создание модели с метрикой RMSLE ниже 1,47 (усредненной по клиентам)',
-      'Разработка алгоритма, способного обрабатывать данные по более чем 50 000 клиентов',
-      'Реализация автоматизированной системы прогнозирования с предсказанием на 12 недель вперед'
+    results: [
+      'Создана модель с метрикой RMSLE ниже 1,47 (усредненной по клиентам)',
+      'Разработан алгоритм, способный обрабатывать данные по более чем 50 000 клиентов',
+      'Реализована автоматизированная система прогнозирования с предсказанием на 12 недель вперед'
     ]
   },
   {
@@ -322,28 +316,6 @@ const Projects = () => {
                       <h4 className="text-sm font-semibold text-white/90 mb-2">Результаты:</h4>
                       <ul className="list-disc list-inside text-sm text-white/70 space-y-1">
                         {project.results.map((result, index) => (
-                          <li key={index} className="ml-2 hover:text-white/90 transition-colors duration-200">{result}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  
-                  {project.currentStatus && (
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-white/90 mb-2">Текущий статус:</h4>
-                      <ul className="list-disc list-inside text-sm text-white/70 space-y-1">
-                        {project.currentStatus.map((status, index) => (
-                          <li key={index} className="ml-2 hover:text-white/90 transition-colors duration-200">{status}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  
-                  {project.plannedResults && (
-                    <div>
-                      <h4 className="text-sm font-semibold text-white/90 mb-2">Планируемые результаты:</h4>
-                      <ul className="list-disc list-inside text-sm text-white/70 space-y-1">
-                        {project.plannedResults.map((result, index) => (
                           <li key={index} className="ml-2 hover:text-white/90 transition-colors duration-200">{result}</li>
                         ))}
                       </ul>

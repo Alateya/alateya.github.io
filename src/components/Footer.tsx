@@ -161,7 +161,7 @@ const Footer = () => {
                 </div>
                 <div className="flex space-x-5">
                   <motion.a 
-                    href="https://t.me/alateya_96" 
+                    href="https://t.me/username" 
                     className="text-white/60 hover:text-secondary transition-all duration-300 p-2 border border-white/10 rounded-lg hover:border-secondary/40"
                     aria-label="Telegram"
                     variants={iconVariants}
@@ -173,103 +173,6 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="w-full max-w-md"
-          >
-            <h4 className="text-2xl font-bold text-white mb-6">Связаться со мной</h4>
-            
-            {formSubmitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="bg-secondary/20 backdrop-blur-sm rounded-lg p-6 border border-secondary/30"
-              >
-                <div className="flex items-center justify-center flex-col text-center">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1, rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="w-16 h-16 bg-secondary/30 rounded-full flex items-center justify-center mb-4"
-                  >
-                    <FaPaperPlane className="text-2xl text-white" />
-                  </motion.div>
-                  <h5 className="text-xl font-bold text-white mb-2">Сообщение отправлено!</h5>
-                  <p className="text-white/70">Спасибо за обращение. Я свяжусь с вами в ближайшее время.</p>
-                </div>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-white/80 mb-2 text-sm">Имя</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-dark/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-transparent transition-all duration-300"
-                    placeholder="Ваше имя"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-white/80 mb-2 text-sm">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-dark/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-transparent transition-all duration-300"
-                    placeholder="Ваш email"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-white/80 mb-2 text-sm">Сообщение</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formState.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="w-full bg-dark/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Ваше сообщение..."
-                  />
-                </div>
-                
-                <motion.button
-                  type="submit"
-                  className="w-full bg-secondary/20 border border-secondary/40 text-white rounded-lg py-3 font-medium relative overflow-hidden group"
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.98 }}
-                  disabled={isSubmitting}
-                >
-                  <span className="relative z-10">
-                    {isSubmitting ? 'Отправка...' : 'Отправить сообщение'}
-                  </span>
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: 0 }}
-                    transition={{ type: "tween", duration: 0.3 }}
-                  />
-                </motion.button>
-                
-                <p className="text-white/50 text-xs text-center mt-4">
-                  Отправляя форму, вы соглашаетесь с <a href="/privacy-policy" className="text-secondary/80 hover:text-secondary transition-colors hover:underline">политикой обработки персональных данных</a>
-                </p>
-              </form>
-            )}
           </motion.div>
         </div>
       </div>
